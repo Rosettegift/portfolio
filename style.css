@@ -1,193 +1,460 @@
+/* ===== RESET & POLICE ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #f7f7fb;
-  color: #1a1a2e;
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  color: #fff; 
+  background-color: #0b0c10; 
   line-height: 1.6;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR (Menu flottant) ===== */
 nav {
-  background: #1a1a2e;
-  padding: 1rem 2rem;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(26, 26, 46, 0.85); 
+  backdrop-filter: blur(10px); 
+  padding: 10px 30px;
+  border-radius: 50px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  width: 90%;
+  max-width: 900px;
+  z-index: 1000;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-nav .logo { color: #fff; font-weight: bold; font-size: 1.2rem; }
-nav ul { list-style: none; display: flex; gap: 1.5rem; }
-nav a { color: #cfcfe0; text-decoration: none; transition: 0.3s; }
-nav a:hover { color: #e94560; }
 
-/* ===== HERO (Accueil) ===== */
+nav .logo { color: #fff; font-weight: bold; font-size: 1.2rem; letter-spacing: 2px; }
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav a { color: #cfcfe0; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+nav a:hover { color: #e94560; text-shadow: 0 0 10px rgba(233, 69, 96, 0.5); }
+
+/* ===== SECTION HERO (Page d'accueil) ===== */
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-  color: #fff;
+  padding: 100px 2rem 2rem;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0b0c10 100%);
 }
+
 .hero-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #e94560;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 8px 24px rgba(233, 69, 96, 0.4);
-}
-.hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-.hero .subtitle { font-size: 1.2rem; color: #e94560; margin-bottom: 1rem; }
-.hero p { max-width: 600px; margin-bottom: 2.5rem; color: #cfcfe0; }
-
-/* ===== BOUTONS ===== */
-.buttons { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
-.btn {
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  border: 2px solid #e94560;
-  color: #e94560;
-  background: transparent;
-}
-.btn:hover { background: #e94560; color: #fff; transform: translateY(-3px); }
-.btn-solid { background: #e94560; color: #fff; }
-.btn-solid:hover { background: #c73652; }
-
-/* ===== BOUTONS CONTACT ===== */
-.contact-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.btn-whatsapp {
-  background: #25D366;
-  color: #fff;
-  border-color: #25D366;
-}
-.btn-whatsapp:hover {
-  background: #1da851;
-  border-color: #1da851;
-  color: #fff;
-}
-.btn-email {
-  background: #e94560;
-  color: #fff;
-  border-color: #e94560;
-}
-.btn-email:hover {
-  background: #c73652;
-  border-color: #c73652;
-  color: #fff;
-}
-
-/* ===== SECTIONS INTERNES ===== */
-.page-header {
-  background: #1a1a2e;
-  color: #fff;
-  padding: 4rem 2rem 2rem;
-  text-align: center;
-}
-.page-header h1 { font-size: 2.5rem; color: #e94560; }
-.page-header p { color: #cfcfe0; margin-top: 0.5rem; }
-
-.container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
-
-/* ===== CARTES PROJETS ===== */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.8rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  border-left: 5px solid #e94560;
-}
-.card h3 { color: #1a1a2e; margin-bottom: 0.5rem; }
-.card .meta { font-size: 0.85rem; color: #888; margin-bottom: 1rem; font-style: italic; }
-.card ul { margin-left: 1.2rem; margin-top: 0.5rem; }
-.card ul li { margin-bottom: 0.3rem; }
-
-/* ===== GALERIE PHOTOS ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 1.2rem 0;
-}
-.gallery figure {
-  background: #f0f0f5;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-}
-.gallery img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  background: #ddd;
-}
-.gallery figcaption {
-  font-size: 0.8rem;
-  color: #555;
-  padding: 0.6rem;
-  font-style: italic;
-}
-.photo-single {
-  text-align: center;
-  margin: 1.2rem 0;
-}
-.photo-single img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
-.photo-single figcaption {
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 0.5rem;
-  font-style: italic;
-}
-
-/* ===== À PROPOS ===== */
-.about-photo {
   width: 180px;
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #e94560;
-  display: block;
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 30px rgba(233, 69, 96, 0.4); 
 }
-.about p { margin-bottom: 1rem; }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #1a1a2e;
-  color: #cfcfe0;
+.hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -1px; }
+.hero .subtitle { font-size: 1.2rem; color: #e94560; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 3px; font-weight: bold;}
+.hero p { max-width: 700px; margin-bottom: 3rem; color: #a0a0b0; font-size: 1.1rem; }
+
+/* ===== FONDS SPECIFIQUES POUR CHAQUE PAGE ===== */
+.bg-ecole {
+  background: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.95)), 
+              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+}
+
+.bg-business {
+  background: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.95)), 
+              url('https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+}
+
+.bg-sport {
+  background: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.95)), 
+              url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+}
+
+/* ===== BOUTONS ===== */
+.buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  border: 2px solid #e94560;
+  color: #fff;
+  background: transparent;
+  backdrop-filter: blur(5px);
+}
+.btn:hover { background: #e94560; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(233,69,96,0.3); }
+.btn-solid { background: #e94560; color: #fff; }
+
+/* ===== SECTIONS INTERNES ===== */
+.page-header {
+  padding: 150px 2rem 3rem;
   text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
 }
-footer a { color: #e94560; text-decoration: none; }
+.page-header h1 { font-size: 3rem; color: #fff; margin-bottom: 0.5rem; }
+.page-header p { color: #e94560; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;}
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 700px) {
-  nav { flex-direction: column; gap: 1rem; }
-  nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  .hero h1 { font-size: 2rem; }
-  .hero .subtitle { font-size: 1rem; }
+.container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+/* Les cartes de contenu (verre dépoli) */
+.card {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); border-color: rgba(233, 69, 96, 0.3); }
+.card h3 { color: #fff; font-size: 1.5rem; margin-bottom: 0.5rem; }
+.card .meta { font-size: 0.9rem; color: #e94560; margin-bottom: 1.5rem; font-weight: bold; }
+.card p { color: #cfcfe0; }
+.card ul { margin-left: 1.5rem; margin-top: 1rem; color: #cfcfe0; }
+.card ul li { margin-bottom: 0.5rem; }
+
+/* =========================================
+   1. CENTRAGE GLOBAL DES IMAGES (Galerie)
+   ========================================= */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gallery figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  margin: 0 auto;
+  background: #111;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 500px; 
+  height: auto;
+  max-height: 400px;
+  object-fit: contain; /* Ne coupe pas l'image */
+  background-color: #000;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.gallery figcaption {
+  color: #fff;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* =========================================
+   2. CARROUSEL (Balayage Sport / Projets)
+   ========================================= */
+.carrousel-sport {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+  scroll-padding: 0 50%; 
+}
+
+.item-sport {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 600px;
+  scroll-snap-align: center; /* Centre l'image au repos */
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.item-sport img { 
+  width: 100%; 
+  height: auto; 
+  max-height: 400px; 
+  object-fit: contain; /* Affiche l'image en entier */
+  display: block; 
+  background-color: #000;
+}
+
+.item-sport figcaption { 
+  padding: 15px; 
+  text-align: center; 
+  font-weight: bold; 
+  color: #fff; 
+  background: #1a1a2e; 
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.hint-defilement { font-size: 0.85rem; color: #888; text-align: center; font-style: italic; margin-top: 10px; }
+
+/* Masquer la barre de défilement */
+.carrousel-sport::-webkit-scrollbar { display: none; }
+.carrousel-sport { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Contact */
+.contact-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; }
+.btn-whatsapp { background: #25D366; border-color: #25D366; color: #fff; }
+.btn-whatsapp:hover { background: #1da851; border-color: #1da851; }
+.btn-email { background: #e94560; border-color: #e94560; color: #fff; }
+
+footer { text-align: center; padding: 3rem; color: #666; font-size: 0.9rem; }
+
+/* ===== ANIMATION D'APPARITION ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card, .hero h1, .hero p, .hero .subtitle {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.categorie-tag {
+  background-color: transparent; /* Enlève le fond rose */
+  color: #e94560; /* Garde la couleur de ton thème (ou mets #fff pour du blanc) */
+  padding: 0; 
+  border: none; /* Enlève la bordure */
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: none; /* Enlève l'ombre */
+  text-decoration: none;
+}
+
+.categories-shop {
+  display: flex;
+  gap: 20px; /* Espace entre les mots */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.categorie-tag:hover {
+  background-color: #e94560;
+  color: white;
+}
+
+/* ===== CARTES ARTICLES (CORRECTION) ===== */
+.carrousel-articles {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px 5px;
+  scroll-snap-type: x mandatory;
+}
+
+.article-item {
+  flex: 0 0 auto;
+  width: 180px; /* Largeur fixe pour toutes les cartes */
+  scroll-snap-align: start;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column; /* Aligne l'image en haut et le texte en bas */
+  transition: transform 0.3s ease;
+}
+
+.article-item:hover {
+  transform: translateY(-5px);
+}
+
+.article-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.article-item p {
+  font-size: 0.85rem;
+  color: #333;
+  margin: 10px;
+  font-weight: bold;
+  /* C'EST ICI LA MAGIE POUR LE GRAND TEXTE BLEU : */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limite à 3 lignes de texte maximum */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+/* Cacher la barre de défilement */
+.carrousel-articles::-webkit-scrollbar {
+  display: none;
+}
+/* ===== ÉTIQUETTES (TAGS) POUR LE BOOSTAGE ===== */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  background-color: transparent; /* Enlève le fond sombre */
+  color: #fff; /* Garde le texte blanc */
+  padding: 0; /* Enlève l'espace interne du bouton */
+  border: none; /* ENLÈVE LA BORDURE GRISE */
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ===== GALERIE À 2 IMAGES CÔTE À CÔTE ===== */
+.gallery-split {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.gallery-split figure {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  background: #f0f0f5;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-split img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain; /* Affiche l'image en entier (pas coupée) */
+  border-radius: 8px;
+  background: #fff;
+}
+
+.gallery-split figcaption {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: bold;
+}
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center; /* C'est cette ligne qui centre tout */
+  margin-top: 2rem;
+}
+
+/* ===== PAGE À PROPOS (DESIGN 2 COLONNES) ===== */
+
+/* Conteneur principal */
+.about-layout {
+  display: flex;
+  gap: 3rem; 
+  align-items: stretch; /* C'EST LA CLÉ : force l'image et le texte à avoir la même hauteur */
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* La colonne de gauche (la photo) */
+.about-image-col {
+  flex: 0 0 300px; /* Donne une largeur fixe de 300px à la colonne image */
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%; /* L'image prend toute la hauteur de la colonne */
+  border-radius: 20px; 
+  border: 3px solid #dbe945; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  object-fit: cover; /* Remplit le cadre sans déformer ton visage */
+}
+
+/* La colonne de droite (le texte) */
+.about-text-col {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre le texte verticalement par rapport à l'image */
+}
+
+/* --- STYLE DES TEXTES --- */
+
+.about p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cfcfe0; /* Gris clair */
+  margin-bottom: 1.2rem;
+}
+
+.about strong {
+  color: #ffffff; /* Blanc pur pour les mots importants */
+}
+
+/* Le texte d'introduction */
+.about .intro-text {
+  font-size: 1.1rem;
+  color: #ffffff; /* Blanc */
+  font-style: normal; /* Sans italique */
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+
+/* Le message de fin */
+.about .conclusion {
+  font-weight: normal;
+  border-left: 4px solid #c3e945;
+  padding-left: 1.5rem;
+  margin-top: 2rem;
+  color: #cfcfe0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ===== RESPONSIVE (POUR TÉLÉPHONE) ===== */
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column; /* Sur téléphone, la photo passe au-dessus */
+    text-align: center; 
+  }
+  .about-image-col {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  .about-photo {
+    height: auto; /* Sur téléphone, l'image reprend sa taille normale */
+    min-height: 250px;
+  }
+  /* Le message de fin */
+.about .conclusion {
+  font-weight: normal;
+  border-left: 4px solid #b5e945;
+  padding-left: 1.5rem;
+  margin-top: 3rem; /* Ajoute de l'espace au-dessus pour le séparer de la photo */
+  color: #cfcfe0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 100%; /* Prend toute la largeur en bas */
+}
 }
